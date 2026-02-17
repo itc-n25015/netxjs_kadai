@@ -1,0 +1,30 @@
+/* src/styles/SpotCard.module.css */
+
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.name {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #6b4226;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #0e0500;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  border-radius: 16px;
+  object-fit: cover;
+}

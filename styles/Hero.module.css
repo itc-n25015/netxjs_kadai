@@ -1,0 +1,15 @@
+/* styles/Hero.module.css */
+.hero {
+  position: relative;
+  height: 60vh;
+}
+.hero img {
+  object-fit: cover;
+}
+.text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+}
+

@@ -1,0 +1,19 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 16px;
+  color: #0e0d0d;
+  font-size: 2rem;
+}
+
+.image {
+  display: block;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+  cursor: pointer;
+}
