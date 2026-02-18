@@ -18,7 +18,7 @@ export default async function SpotDetailPage({
   <a href={spot.url} target="_blank" rel="noopener noreferrer">
     <Image
       src={spot.image.url}
-      alt={spot.name}
+      alt={spot.name ?? "image"}
       width={800}
       height={600}
       className={styles.image}
