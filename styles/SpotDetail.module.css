@@ -1,19 +1,91 @@
+/* ページ全体：フェードイン */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
-  text-align: center;
+  padding: 40px 20px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* タイトル：少し遅れて表示 */
 .title {
-  margin-bottom: 16px;
-  color: #0e0d0d;
+  text-align: center;
   font-size: 2rem;
+  margin-bottom: 24px;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
 }
 
-.image {
+/* 画像ラッパー */
+.imageWrapper {
   display: block;
-  margin: 0 auto 24px;
+  overflow: hidden;
   border-radius: 20px;
-  cursor: pointer;
+  margin: 0 auto 24px;
+}
+
+/* 写真：hoverでやさしく拡大 */
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+/* 説明文：さらに遅れて表示 */
+.description {
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-top: 20px;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.25s;
+}
+
+/* 戻るボタン（最下部） */
+.backWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.back {
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #fffaf5;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 共通フェードアップ */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -6,7 +6,7 @@ import styles from "@/styles/SpotCard.module.css";
 export default function SpotCard({ spot }: any) {
   return (
     <Link href={`/spots/${spot.id}`} className={styles.card}>
-      {/* 🔥 写真の上にタイトル */}
+    
       <h2 className={styles.title}>{spot.title}</h2>
 
       <div className={styles.imageWrapper}>

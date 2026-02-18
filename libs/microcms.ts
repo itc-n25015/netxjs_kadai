@@ -1,19 +1,17 @@
 // src/libs/microcms.ts
 
-const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN!;
-const API_KEY = process.env.MICROCMS_API_KEY!;
+const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN!;
+const apiKey = process.env.MICROCMS_API_KEY!;
 
-/** 一覧取得 */
+const baseUrl = `https://${serviceDomain}.microcms.io/api/v1`;
+
 export async function getSpots() {
-  const res = await fetch(
-    `https://${SERVICE_DOMAIN}.microcms.io/api/v1/spots`,
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": API_KEY,
-      },
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${baseUrl}/spots`, {
+    headers: {
+      "X-MICROCMS-API-KEY": apiKey,
+    },
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch spots");
@@ -22,17 +20,13 @@ export async function getSpots() {
   return res.json();
 }
 
-
 export async function getSpotDetail(id: string) {
-  const res = await fetch(
-    `https://${SERVICE_DOMAIN}.microcms.io/api/v1/spots/${id}`,
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": API_KEY,
-      },
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${baseUrl}/spots/${id}`, {
+    headers: {
+      "X-MICROCMS-API-KEY": apiKey,
+    },
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch spot detail");
