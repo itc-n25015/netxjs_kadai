@@ -1,7 +1,7 @@
 // app/spots/page.tsx
 import Image from "next/image";
 import { getSpots } from "@/libs/microcms";
-import styles from "@/styles/spots.module.css";
+import styles from "@/styles/SpotList.module.css";
 
 export default async function SpotsPage() {
   const data = await getSpots();
