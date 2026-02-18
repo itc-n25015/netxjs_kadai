@@ -14,20 +14,18 @@ export default async function SpotDetailPage({
     <div className={styles.container}>
       <h1 className={styles.title}>{spot.title}</h1>
 
-      <a
-        href={spot.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.imageWrapper}
-      >
-        <Image
-          src={spot.image.url}
-          alt={spot.name}
-          width={800}
-          height={600}
-          className={styles.image}
-        />
-      </a>
+      {spot.image?.url && (
+  <a href={spot.url} target="_blank" rel="noopener noreferrer">
+    <Image
+      src={spot.image.url}
+      alt={spot.name}
+      width={800}
+      height={600}
+      className={styles.image}
+    />
+  </a>
+)}
+
 
       <p className={styles.description}>{spot.description}</p>
 
